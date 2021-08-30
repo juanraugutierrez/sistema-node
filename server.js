@@ -19,7 +19,7 @@ function iniciar(route) {
     http.createServer(onRequest).listen(8081);
     console.log("servidor iniciado");
     i+=1;
-    
+    //chupa
 };
 exports.iniciar=iniciar;
 // http.createServer(function(request, response){
