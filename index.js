@@ -1,2 +1,3 @@
 var server=  require("./server");
-server.iniciar();
+var router=require("./router");
+server.iniciar(router.route);

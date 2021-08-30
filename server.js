@@ -1,9 +1,13 @@
 var http= require("http");
+var url= require("url");
 var i=0;
 
-function iniciar() {
+function iniciar(route) {
     function onRequest(request,response){
-        console.log("peticion recibida.");
+        var pathname=url.parse(request.url).pathname;        
+        console.log("peticion para "+ pathname + " recibida.");
+        route(pathname);
+
         response.writeHead(200,{"Content-Type": "text/html"});
         response.write("hola Mundo");
         response.end();
@@ -22,5 +26,4 @@ exports.iniciar=iniciar;
 //     response.writeHead(200,{"Content-Type": "text/html"});
 //     response.write("hola Mundo");
 //     response.end();
-// }).listen(8081);
-exports.iniciar=iniciar;
+// }).listen(8081)
